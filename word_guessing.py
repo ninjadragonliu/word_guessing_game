@@ -8,3 +8,13 @@ attempts = len(word) + 2
 
 while attempts > 0:
     print("\nCurrent word: " + " ".join(guessed_word))
+
+    guess = input("Enter a letter: ")
+    if guess in word:
+        for i in range(len(word)):
+            if word[i] == guess:
+                guessed_word[i] = guess
+        print("Good guess!")
+    else:
+        print("Try again! You have " + str(attempts) + " attempts left.")
+        attempts -= 1
